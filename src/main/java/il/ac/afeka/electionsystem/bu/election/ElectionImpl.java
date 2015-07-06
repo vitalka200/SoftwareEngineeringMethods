@@ -1,5 +1,5 @@
 package il.ac.afeka.electionsystem.bu.election;
 
-public class ElectionImpl {
+public class ElectionImpl implements Election{
 
 }
