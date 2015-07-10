@@ -4,6 +4,7 @@ public class Voter extends Citizen {
 	private boolean isVoted = false;
 	private Ballot ballot;
 	
+	public Voter() {}
 	public Voter(long id, String firstName, String lastName, Address address) {
 		super(id, firstName, lastName, address);
 	}

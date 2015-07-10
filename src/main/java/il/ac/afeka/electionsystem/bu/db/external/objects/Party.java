@@ -4,6 +4,7 @@ public class Party {
 	private long id;
 	private String name;
 	
+	public Party() {}
 	public Party(long id, String name) {
 		this.id = id;
 		this.name = name;

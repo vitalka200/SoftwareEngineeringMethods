@@ -6,6 +6,7 @@ public class Citizen {
 	private String lName;
 	private Address address;
 
+	public Citizen() {}
 	public Citizen(long id, String firstName, String lastName, Address address) {
 		setId(id);
 		setFirstName(firstName);
