@@ -5,12 +5,14 @@ public class Voter extends Citizen {
 	private Ballot ballot;
 	
 	public Voter() {}
-	public Voter(long id, String firstName, String lastName, Address address) {
-		super(id, firstName, lastName, address);
+	public Voter(long id, String firstName, String lastName,
+			Address address, double age, long ballotId) {
+		super(id, firstName, lastName, address, age, ballotId);
 	}
 	
 	public Voter(Citizen c) {
-		super(c.getId(), c.getFirstName(), c.getFirstName(), c.getAddress());
+		super(c.getId(), c.getFirstName(), c.getFirstName(),
+				c.getAddress(), c.getAge(), c.getBallotId());
 	}
 	
 	public void setIsVoted(boolean isVoted) {
