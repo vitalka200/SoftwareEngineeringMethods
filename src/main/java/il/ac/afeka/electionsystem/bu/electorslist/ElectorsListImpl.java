@@ -1,20 +1,26 @@
 package il.ac.afeka.electionsystem.bu.electorslist;
 
-import il.ac.afeka.electionsystem.bu.db.objects.Citizen;
+import il.ac.afeka.electionsystem.bu.db.external.lists.CitizenList;
+
 
 public class ElectorsListImpl implements ElectorsList{
 
 	private CitizenList citizenList;
+	private static ElectorsList instance;
 	
-	public ElectorsListImpl(CitizenList citizenList) {
-		this.citizenList = citizenList;
-	}
 	
-	public ElectorsListImpl() {
+	private ElectorsListImpl() {
 		this.citizenList = CitizenList.getInstance();
 	}
+	
+	public static ElectorsList getInstance() {
+		if (instance == null) {
+			instance = new ElectorsListImpl();
+		}
+		return instance;
+	}
 
-	public boolean AuthCitizen(Citizen citizen) {
+	public boolean AuthCitizen(long citizenId) {
 		boolean isAuthenticated = false;
 		boolean isAuthorized = false;
 
@@ -22,4 +28,6 @@ public class ElectorsListImpl implements ElectorsList{
 		
 		return isAuthenticated && isAuthorized;
 	}
+	
+	
 }

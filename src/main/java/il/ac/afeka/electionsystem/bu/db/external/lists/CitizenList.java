@@ -1,7 +1,7 @@
-package il.ac.afeka.electionsystem.bu.electorslist;
+package il.ac.afeka.electionsystem.bu.db.external.lists;
 
-import il.ac.afeka.electionsystem.bu.db.DB;
-import il.ac.afeka.electionsystem.bu.db.objects.Citizen;
+import il.ac.afeka.electionsystem.bu.db.external.objects.Citizen;
+import il.ac.afeka.electionsystem.bu.db.internal.DB;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -20,10 +20,10 @@ public class CitizenList {
 	}
 	
 	private CitizenList() {
-		Collection<Citizen> cList = DB.getInstance().getCitizens();
+		Collection<Citizen> list = DB.getInstance().getCitizens();
 		citizenList = new HashMap<>();
-		for (Citizen c: cList) {
-			citizenList.put(c.getId(), c);
+		for (Citizen element: list) {
+			citizenList.put(element.getId(), element);
 		}
 	}
 	
@@ -31,7 +31,7 @@ public class CitizenList {
 		return citizenList.get(id);
 	}
 	
-	public void addCitizen(Citizen c) {
+	public void updateCitizenList(Citizen c) {
 		if (! citizenList.containsKey(c.getId())) {
 			citizenList.put(c.getId(), c);
 			DB.getInstance().saveCitizens(citizenList.values());

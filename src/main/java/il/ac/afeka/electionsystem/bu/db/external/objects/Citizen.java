@@ -1,4 +1,4 @@
-package il.ac.afeka.electionsystem.bu.db.objects;
+package il.ac.afeka.electionsystem.bu.db.external.objects;
 
 public class Citizen {
 	private long id;

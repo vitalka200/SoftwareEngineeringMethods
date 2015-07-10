@@ -1,10 +1,10 @@
-package il.ac.afeka.electionsystem.bu.db;
+package il.ac.afeka.electionsystem.bu.db.internal;
 
-import il.ac.afeka.electionsystem.bu.db.objects.Ballot;
-import il.ac.afeka.electionsystem.bu.db.objects.Citizen;
-import il.ac.afeka.electionsystem.bu.db.objects.Party;
-import il.ac.afeka.electionsystem.bu.db.objects.Slip;
-import il.ac.afeka.electionsystem.bu.db.objects.Voter;
+import il.ac.afeka.electionsystem.bu.db.external.objects.Ballot;
+import il.ac.afeka.electionsystem.bu.db.external.objects.Citizen;
+import il.ac.afeka.electionsystem.bu.db.external.objects.Party;
+import il.ac.afeka.electionsystem.bu.db.external.objects.Slip;
+import il.ac.afeka.electionsystem.bu.db.external.objects.Voter;
 
 import java.util.Collection;
 
