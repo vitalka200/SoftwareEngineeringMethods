@@ -37,4 +37,7 @@ public class BallotList {
 			DB.getInstance().saveBallots(ballotList.values());
 		}
 	}
+	public Collection<Ballot> getBallotList() {
+		return ballotList.values();
+	}
 }

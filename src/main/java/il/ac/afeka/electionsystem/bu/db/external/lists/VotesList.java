@@ -5,27 +5,28 @@ import il.ac.afeka.electionsystem.bu.db.external.objects.Party;
 import il.ac.afeka.electionsystem.bu.db.external.objects.Slip;
 import il.ac.afeka.electionsystem.bu.db.internal.DB;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class SlipList {
+public class VotesList {
 
 	private static Map<Party, List<Ballot>> partyToBallot;
 	private static Map<Ballot, List<Party>> ballotToParty;
 	private static Collection<Slip> slipList;
-	private static SlipList instance;
+	private static VotesList instance;
 	
-	public static SlipList getInstance() {
+	public static VotesList getInstance() {
 		if (instance == null) {
-			instance = new SlipList();
+			instance = new VotesList();
 		}
 		return instance;
 	}
 	
-	private SlipList() {
+	private VotesList() {
 		slipList = DB.getInstance().getSlips();
 		// For the ease of use we going to create 2 maps
 		// party->Ballot (We'll be able to get how may votes each party has in specific ballot)
@@ -36,6 +37,7 @@ public class SlipList {
 			addSlip(element);
 		}
 	}
+	
 	/**
 	 * party->Ballot (We'll be able to get how may votes each party has in specific ballot)
 	 * 
@@ -68,7 +70,7 @@ public class SlipList {
 		if (ballotToParty.containsKey(s.getBallot())) {
 			ballotToParty.get(s.getBallot()).add(s.getParty());
 		} else {
-			List<Party> l = new LinkedList<>();
+			List<Party> l = new ArrayList<>();
 			l.add(s.getParty());
 			ballotToParty.put(s.getBallot(), l);
 		}

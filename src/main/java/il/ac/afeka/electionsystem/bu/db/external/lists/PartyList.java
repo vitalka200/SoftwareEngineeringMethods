@@ -37,5 +37,9 @@ public class PartyList {
 			DB.getInstance().saveParties(partyList.values());
 		}
 	}
+	
+	public Collection<Party> getPartyList() {
+		return partyList.values();
+	}
 }
 
