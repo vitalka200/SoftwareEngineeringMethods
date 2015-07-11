@@ -39,6 +39,11 @@ public class ElectorsListImpl implements ElectorsList{
 		citizenBallotValidator.validate(citizen, ballotId);
 	}
 	
+	public Citizen getCitizen(long citizenId) {
+		return citizenList.getCitizen(citizenId);
+		
+	}
+	
 	protected class CitizenPersonaValidator {
 		
 		// In the future here can be additional validations
